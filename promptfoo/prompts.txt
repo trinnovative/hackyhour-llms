@@ -1,0 +1,15 @@
+[
+  {"role": "user", "content": "It takes Dave the developer {{hours_to_fix_bug}} hours to fix 1 bug. After fixing {{bugs_until_rest}} bugs he must rest for {{hours_to_rest}} hours and drink coffee. How many bugs can he fix in {{hours_to_work}} hours?"}
+]
+---
+[
+  {"role": "system", "name": "example_user", "content": "It takes Amy 5 minutes to climb and sliding the water slide down. After she slid 4 times, she must rest for 2 minutes. The water slide closes in 50 minutes. How many times can she slide before it closes?"},
+  {"role": "system", "name": "example_assistant", "content": "Amy can slide 9 times in the 50 minutes."},
+  {"role": "user", "content": "It takes Dave the developer {{hours_to_fix_bug}} hours to fix 1 bug. After fixing {{bugs_until_rest}} bugs he must rest for {{hours_to_rest}} hours and drink coffee. How many bugs can he fix in {{hours_to_work}} hours?"}
+]
+---
+[
+  {"role": "system", "name": "example_user", "content": "It takes Amy 5 minutes to climb and sliding the water slide down. After she slid 4 times, she must rest for 2 minutes. The water slide closes in 50 minutes. How many times can she slide before it closes?"},
+  {"role": "system", "name": "example_assistant", "content": "\n            Let's break down the scenario into steps and create a plan to solve it:\n            \n            1. Amy takes 5 minutes for each slide.\n            2. After 2 slides (which takes 10 minutes), Amy takes a 2-minute break.\n            3. Amy has 50 minutes to take slides.\n            \n            We can group the time taken to slide 4 times and take a break as a single 'slide-block' which lasts for 22 minutes (20 minutes for sliding + 2 minutes for a break).\n            Now, we can find the number of complete slide-blocks Amy can have within the 50 minutes: \n            Number of slide-blocks is: 50//22=2\n            \n            Now, we calculate the total time taken for these 2 slide-blocks: \n            Total time for 2 slide-blocks is: 2x22=44 minutes\n            \n            Now, the remaining time Amy has is: 50-44=6 minutes\n            Number of slides in the remaining time is: 6//5=1\n            In the remaining 6 minutes, Amy can slide 1 more time as it takes 5 minutes to slide.\n            \n            Now, the total number of slides Amy can make is the sum of the slides during the slide-blocks and the additional slides in the remaining time:\n            Total slides = (2x4 slides per slide-block) + 1 = 8 + 1 = 9\n            So, Amy can slide 9 times in the 50 minutes.\n            "},
+  {"role": "user", "content": "It takes Dave the developer {{hours_to_fix_bug}} hours to fix 1 bug. After fixing {{bugs_until_rest}} bugs he must rest for {{hours_to_rest}} hours and drink coffee. How many bugs can he fix in {{hours_to_work}} hours?"}
+]

@@ -1,0 +1,103 @@
+prompts:
+  - file://prompts.txt
+providers: [openai:gpt-3.5-turbo]
+tests:
+  - description: Test case 1
+    vars:
+      hours_to_work: 8.5
+      hours_to_fix_bug: 1.5
+      bugs_until_rest: 2
+      hours_to_rest: 0.5
+    assert:
+      - type: model-graded-factuality
+        value: Dave can fix 5 bugs in 8.5 hours.
+
+  - description: Test case 2
+    vars:
+      hours_to_work: 9
+      hours_to_fix_bug: 1
+      bugs_until_rest: 3
+      hours_to_rest: 1
+    assert:
+      - type: model-graded-factuality
+        value: Dave can fix 7 bugs in 9 hours.
+
+  - description: Test case 3
+    vars:
+      hours_to_work: 7
+      hours_to_fix_bug: 2
+      bugs_until_rest: 1
+      hours_to_rest: 0.25
+    assert:
+      - type: model-graded-factuality
+        value: Dave can fix 3 bugs in 7 hours.
+
+  - description: Test case 4
+    vars:
+      hours_to_work: 7
+      hours_to_fix_bug: 3
+      bugs_until_rest: 1
+      hours_to_rest: 1
+    assert:
+      - type: model-graded-factuality
+        value: Dave can fix 2 bugs in 7 hours.
+
+  - description: Test case 5
+    vars:
+      hours_to_work: 7.5
+      hours_to_fix_bug: 0.5
+      bugs_until_rest: 4
+      hours_to_rest: 0.75
+    assert:
+      - type: model-graded-factuality
+        value: Dave can fix 12 bugs in 7.5 hours.
+
+  - description: Test case 6
+    vars:
+      hours_to_work: 6
+      hours_to_fix_bug: 1
+      bugs_until_rest: 2
+      hours_to_rest: 0.5
+    assert:
+      - type: model-graded-factuality
+        value: Dave can fix 5 bugs in 6 hours.
+
+  - description: Test case 7
+    vars:
+      hours_to_work: 10
+      hours_to_fix_bug: 3
+      bugs_until_rest: 1
+      hours_to_rest: 1
+    assert:
+      - type: model-graded-factuality
+        value: Dave can fix 2 bugs in 10 hours.
+
+  - description: Test case 8
+    vars:
+      hours_to_work: 9.5
+      hours_to_fix_bug: 1.5
+      bugs_until_rest: 2
+      hours_to_rest: 1.5
+    assert:
+      - type: model-graded-factuality
+        value: Dave can fix 4 bugs in 9.5 hours.
+
+  - description: Test case 9
+    vars:
+      hours_to_work: 4
+      hours_to_fix_bug: 3
+      bugs_until_rest: 2
+      hours_to_rest: 1
+    assert:
+      - type: model-graded-factuality
+        value: Dave can fix 1 bugs in 4 hours.
+
+  - description: Test case 10
+    vars:
+      hours_to_work: 9
+      hours_to_fix_bug: 1
+      bugs_until_rest: 4
+      hours_to_rest: 1
+    assert:
+      - type: model-graded-factuality
+        value: Dave can fix 8 bugs in 9 hours.
