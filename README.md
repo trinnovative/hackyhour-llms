@@ -21,6 +21,11 @@ OPENAI_API_KEY=<your_api_key_here>
 
 ## Promptfoo
 
+Switch to the promptfoo folder:
+```
+cd promptfoo
+```
+
 Install promptfoo: 
 ```
 npm install -g promptfoo
